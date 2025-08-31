@@ -2,45 +2,83 @@ import asyncio
 import requests
 from bs4 import BeautifulSoup
 
-# This below is the main function 
-async def function1():
-    url = 'https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6620ec7544fa3849c3cb27fc_party_wumpus.gif'
-    r = requests.get(url, allow_redirects=True)
-    open('discordgifgif2.gif', 'wb').write(r.content)
-    print("Image 1 is downloaded")
+print("Welcome to Image/GIF download services")
+print("1. for Manual download\n2. for Pinterest download\n3. Single download")
+user_ask = input("Enter number to chose medium to download image/gif: ")
 
-async def function2():
-    url = 'https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6620ec7544fa3849c3cb27fc_party_wumpus.gif'
-    r = requests.get(url, allow_redirects=True)
-    open('discordgif2.gif', 'wb').write(r.content)
-    print("Image 2 is downloaded")
+if("1" in user_ask):
+    def manual_download():
+        print("You chose manual download.....")
+        async def function1():
+            url = input("Enter URL of your choice: ") # Here we are entering the URL 
+            response = requests.get(url) # Get request has been sended
+            file_name = input("Enter name to save the file: ") # Asking for file name to be saved
+            ext_name = input("Enter ext name: ") # Asking for extension name
+            open(f"{file_name}.{ext_name}", "wb").write(response.content)
+            print(f"{file_name} is downloaded") # The content is being downlaoded and saved in the folder from the file name given
 
-async def function3():
-    url = 'https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6620ec7544fa3849c3cb27fc_party_wumpus.gif'
-    r = requests.get(url, allow_redirects=True)
-    open('discordgif3.gif', 'wb').write(r.content)
-    print("Image 3 is downloaded")
+        async def function2():
+            url = input("Enter URL of your choice: ") # Here we are entering the URL
+            response = requests.get(url) # Get request has been sended
+            file_name = input("Enter name to save the file: ") # Asking for file name to be saved
+            ext_name = input("Enter ext name: ") # Asking for extension name
+            open(f"{file_name}.{ext_name}", "wb").write(response.content)
+            print(f"{file_name} is downloaded") # The content is being downlaoded and saved in the folder from the file name given
 
-async def main():
-    a = await asyncio.gather(
-        function1(),
-        function2(),
-        function3()
-    )
+        async def function3():
+            url = input("Enter URL of your choice: ") # Here we are entering the URL
+            response = requests.get(url) # Get request has been sended
+            file_name = input("Enter name to save the file: ") # Asking for file name to be saved
+            ext_name = input("Enter ext name: ") # Asking for extension name
+            open(f"{file_name}.{ext_name}", "wb").write(response.content)
+            print(f"{file_name} is downloaded") # The content is being downlaoded and saved in the folder from the file name given
 
-asyncio.run(main())
+        async def main():
+            l = await asyncio.gather(
+                function1(),
+                function2(),
+                function3()
+            )
+        asyncio.run(main())
+    manual_download()
 
-# This below checks the links that is link is able to be downloaded
-# url = "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/662630272724e61320fb7ee2_WUMPUS.webp"
-# r = requests.get(url)
+elif("2" in user_ask):
+    def pinteres_download():
+        print("You chose pinterest download.....")
+        url = input("enter url here: ") # Here we are giving the URL
+        headers = {"User-Agent": "Mozilla/5.0"}  # Pretend to be a browser
+        response = requests.get(url, headers=headers)
 
-# print(r.headers["Content-Type"])
+        soup = BeautifulSoup(response.text, "html.parser")
 
-# This below will parse the images and etc linkes which we can download it 
-# url = "https://www.discord.com"
-# r = requests.get(url)
-# soup = BeautifulSoup(r.text, "html.parser")
+        # Try to get the image URL
+        og_image = soup.find("meta", property="og:image")
+        if og_image:
+            print("Image URL:", og_image["content"])
 
-# # find all <img> tags
-# for img in soup.find_all("img"):
-#     print(img.get("src"))
+        # Try to get the video URL (in case it's a GIF-like video)
+        og_video = soup.find("meta", property="og:video")
+        if og_video:
+            print("Video/GIF URL:", og_video["content"])
+
+        url = input("Enter url here: ") # Here we are giving the URL
+        response = requests.get(url) # Get request has beend made
+        file_name = input("Enter the name of the file: ") # Asking for file name to be saved
+        ext_name = input("Enter ext name: ") # Asking for extension name
+        open(f"{file_name}.{ext_name}", "wb").write(response.content)
+        print("Download Successful") # Here the content has been saved in the folder from the file name given
+    pinteres_download()
+
+elif("3" in user_ask):
+    def single_download():
+        print("You chose single download.....")
+        url = input("Enter url here: ") # Here we are giving the URL
+        file_name = input("Enter the name of the file: ") # Get request has beend made
+        response = requests.get(url) # Asking for file name to be saved
+        ext_name = input("Enter ext name: ") # Asking for extension name
+        open(f"{file_name}.{ext_name}", "wb").write(response.content)
+        print("Download Successful") # Here the content has been saved in the folder from the file name given
+    single_download()
+
+else:
+    print("Something went wrong")
