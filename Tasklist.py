@@ -1,45 +1,53 @@
-'''
-first create a folder from the user's name
-and in that create a folder from the name the user will give you
-and then create files in them 
-
-features:
-1. add more files
-2. remove files.
-3. rename files names.
-4. rename folder name.
-5. edit the exsisting file.
-6. view the exsisting folders.
-7. view the exsisting files.
-8. clear files.
-9. clear folders.
-10. add more foldes.
-11. you can moves files from one folder to another folder.
-'''
 import os
 import shutil
 
-print("Make folder in easy steps")
-
-username = input("Enter your username: ")
-if (username in os.listdir("D:/Code")):
-    print("You already have many folders")
-else:
+username = input("Enter your username here: ")
+if not (os.path.exists(f"D:/Code/{username}")):
     os.mkdir(f"D:/Code/{username}")
-    print("Your folder is created go on check on")
+    print("Folder Created")
+else:
+    print("username already exsist and your folders are:")
+    folders = os.listdir(f"D:/Code/{username}")
+    for folder in folders:
+        print(folder)
 
-print('''You can do the following things with your folder:
-1. Press '1' to makr more files in your folder
-2. Press '2' to remove files from your folder''')
+while True:
+    print("-----------\n1. Press 1 to add folders\n2. Press 2 to add files\n3. Press 3 to remove folders\n4. Press 4 to remove files\n5. Press 5 to rename file name\n6. Press 6 to rename folder name\n7. Press 7 to view the exsisting file\n8. Press 8 to view the exsisting folder\n9. Press 9 to edit the exsisting file\n10. Press 10 to clear files\n11. Press 11 to clear folders\n12. Press 12 to change the location of the folders and files\n13. "
+    "Press 13 to exit the program\n-----------")
+    ask = input("Enter number to chose the operation: ")
 
-ask = input("Enter number of your choice: ")
-
-if("1" in ask):
-    folder_no = int(input("How many folder you want to make: "))
-    i = 0
-    while(i<folder_no):
+    if("1" in ask):
         folder_name = input("Enter folder name: ")
         os.mkdir(f"D:/Code/{username}/{folder_name}")
-        i = i + 1
-else:
-    print("Something went wrong")
+        print("Folder created successfully")
+
+    elif("2" in ask):
+        ask_fn = input("Enter folder name in which you want to create file: ")
+        file_name = input("Enter file name: ")
+        while(data := input("Enter information here or 'q' to quit: ")) != "q":
+            with open(f"D:/Code/{username}/{folder_name}/{file_name}.txt", "a") as f:
+                f.write(f"{data}\n")
+        print("File created successfully")
+
+    elif("3" in ask):
+        rem_folder = input("Enter the name of the folder you want to delete: ")
+        shutil.rmtree(f"D:/Code/{username}/{rem_folder}")
+        print("Folder deleted successfully")
+
+    elif("4" in ask):
+        folder_name = input("Enter folder name: ")
+        rem_file = input("Enter file name here: ")
+        os.remove(f"D:/Code/{username}/{folder_name}/{rem_file}")
+        print("File deleted successfully")
+
+    elif("13" in ask):
+        print("Exit made")
+        break
+
+import random
+computer = random.choice([1,2,3])
+youstr = input("Enter your move here: ")
+dict = {"s": 1, "w": 2, "g": 3}
+revdict = {1: "Snake", 2: "Water", 3: "Gun"}
+you = dict[youstr]
+print(f"You chose: {revdict[you]}\nComputer chose: {revdict[computer]}")
