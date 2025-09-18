@@ -15,22 +15,23 @@
 # I. Digital clock
 # J. Harmonice mean Calculator.
 # K. PDF merger.
-class MannualChabot:
+class ManualChatbot:
     def functions(self):
         print("The Opertion this chatbot can perform is:\nPress 1 for Calculator\nPress 2 for games\nPress 3 for Downloading Image/GIF\nPress 4 for News\nPress 5 for Generating passwords\nPress 6 for Generating tables\nPress 7 for Todo list\nPress 8 Digital clock\nPress 9 for PDF merger")
 
-    def calculator(self):
+    def calculator(self, number1, number2, operation):
+        print('Entre +, -, *, / in " " ')
         try:
-            number1  = int(input("Enter number 1: "))
-            number2  = int(input("Enter number 2: "))
-            operation = input("Entre operation: ")
             if("+" in operation):
-                return number1 + number2
+                print(f"The  of two numbers are: {number1+number2}")
             elif("-" in operation):
-                return number1 - number2
+                print(f"The subtraction of two numbers are: {number1-number2}")
             elif("*" in operation):
-                return number1 * number2
+                print(f"The multiplication of two numbers are: {number1*number2}")
             elif("/" in operation):
-                return number1 / number2
+                print(f"The division  of two numbers are: {number1/number2}")
         except ZeroDivisionError:
             print("Please entre number other than 0")
+
+a = ManualChatbot()
+a.calculator(10,10,"+")
