@@ -1,15 +1,17 @@
 import time
 from plyer import notification
 
-# title = "Hello Utkarsh"
-# message = "this is a sample message"
-# notification.notify(
-#     title = title,
-#     message = message,
-#     timeout = 10
-# )
+# Below code will send a notification to our system on anytime when we run the python script and we can change the content of the message also. 
+title = "Hello Utkarsh"
+message = "this is a sample message"
+notification.notify(
+    title = title,
+    message = message,
+    timeout = 10
+)
 
-target_time = "12:00:00"
+# Below code will send the notification at the specific time given by us and we can change the content of the message.
+target_time = "20:08:00"
 while True:
     current_time = time.strftime("%H:%M:%S")
 

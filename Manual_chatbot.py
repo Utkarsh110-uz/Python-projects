@@ -1,3 +1,4 @@
+# *Note this chatbot is under development and not yet finished wait until it is finished.*
 # A. Calculator.
 # B. Games:
 # a. snake water gun game.

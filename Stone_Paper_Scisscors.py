@@ -1,5 +1,5 @@
 # Stone Paper Scisscors game:
-# Stone = 1 Paper = 2 scisscors = 3
+# This game also uses same logic using snake water gun game
 
 import random
 

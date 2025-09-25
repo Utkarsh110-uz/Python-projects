@@ -1,3 +1,4 @@
+# *Note this app is under development and not yet finished and in future i am going to add more functions in this.*
 import speech_recognition as sr
 import os
 
@@ -18,4 +19,4 @@ except sr.UnknownValueError:
 except sr.RequestError:
     print("Could not request results, check internet")
 
-os.system(user)
+os.system(user) # Here using os.system we open apps that we say in the mic

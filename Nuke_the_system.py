@@ -1,4 +1,5 @@
 # Nuke the system:
+# *Note this is a dangerous code dont use it to harm your own or anyone else device.*
 import os
 import random
 import shutil

@@ -1,3 +1,4 @@
+# *Note this is not a offical website scraper and can't be used for professional work this can only we used for small purposes or on example basis.*
 import requests
 from bs4 import BeautifulSoup
 
