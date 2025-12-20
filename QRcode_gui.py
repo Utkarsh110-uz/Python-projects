@@ -3,7 +3,7 @@ from tkinter import *
 
 window = Tk()
 window.title("QR Code Generator")
-window.geometry("500x500")
+window.geometry("500x200")
 
 def Qrcode():
     url = message_input.get().strip()
@@ -14,7 +14,7 @@ def Qrcode():
     img.save(file_path)
     output_label.config(text="QR Code Generated")
 
-message_input = Entry(width=20)
+message_input = Entry()
 message_input.pack()
 
 output_label = Label(window, text="Enter Message above", font=("Academy Engraved LET", 20))

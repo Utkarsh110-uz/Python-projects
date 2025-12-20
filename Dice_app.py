@@ -15,7 +15,7 @@ def dice_roll():
     output_label.config(text=f"{random.randint(1, 6)}")
 
 # Initializing label
-output_label = Label(window, text="Number is", font=("Gill Sans", 15))
+output_label = Label(window, text="Number is", font=("Gill Sans", 15), bg="lightcoral")
 output_label.pack(pady=5)
 
 # Initializing buttons

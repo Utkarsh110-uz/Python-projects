@@ -39,7 +39,7 @@ def delete_all():
     output_label.config(text="Output will be seen here")
 
 # Initializing label
-output_label = Label(window, text="Output will be seen here", font=("Devanagari Sangam MN", 20, "bold"))
+output_label = Label(window, text="Output will be seen here", font=("Devanagari Sangam MN", 20, "bold"), bg="#FCD8CF", fg="Black")
 output_label.pack(pady=2)
 
 # Initializing inputs
