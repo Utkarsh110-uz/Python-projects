@@ -1,6 +1,5 @@
 import qrcode
 from tkinter import *
-from PIL import Image, ImageTk
 
 window = Tk()
 window.title("QR Code Generator")

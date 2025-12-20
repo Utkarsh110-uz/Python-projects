@@ -1,8 +1,7 @@
-# Nuke the system:
-# *Note this is a dangerous code dont use it to harm your own or anyone else device.*
 import os
 import random
 import shutil
+from tkinter import *
 '''
 Note - This code is to prank your friends not use this code to do some serious harm to the system like deleting the operating system (os) if you want to use this code to prank you friends then do this: 
 
@@ -19,18 +18,30 @@ a. First system will pick a random number between 1, 100 and ask from the user t
 b. Before that the folder name Winner folder will be created and in that the file will also be created but you can't access that until you guess the correct number. 
 c. If the number guessed is correct then the folder will stay and you can access that and if the number is not same then the folder will be deleted.
 '''
-danger = random.randint(1, 100) # Here System will pick a random number between 1, 100.
+# danger = random.randint(1, 100) 
+# ask = int(input("Enter number here: ")) 
 
-ask = int(input("Enter number here: ")) # Here we are asking user to enter and guess the number. 
+# os.mkdir("D:/Winner folder") 
+# with open(f"D:/Winner folder/winner file.txt", "w") as f:
+#     f.write("You finally won the game congrats")
 
-# Here we are creating folder:
-os.mkdir("D:/Winner folder") 
-with open(f"D:/Winner folder/winner file.txt", "w") as f:
-    f.write("You finally won the game congrats")
+# if(ask == danger):
+#     print("The number is same")
+# else:
+#     shutil.rmtree("D:/Winner folder")
 
-# Here we have created conditions which are the important part of our code:
-if(ask == danger): # Here if the user enter number is same as the number picked by System then the folder will be created.
-    print("The number is same")
-
-else: # Here if the number entred is not equal to the number picked by System then the folder will be deleted
-    shutil.rmtree("D:/Winner folder")
+window = Tk()
+window.geometry("200x200")
+danger_label = Label(window, text=random.randint(1, 100))
+danger_label.pack()
+ask_input = Entry()
+ask_input.pack()
+def check():
+    a = ask_input.get()
+    if a == 1:
+        danger_label.config(text="Yes")
+check_button = Button(window, text="Check", command=check)
+check_button.pack()
+exit_button = Button(window, text="Quit", command=window.destroy)
+exit_button.pack()
+window.mainloop()
