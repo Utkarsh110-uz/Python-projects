@@ -6,7 +6,7 @@ from tkinter import *
 window = Tk()
 
 # Window related operations
-window.geometry("200x200")
+window.geometry("500x200")
 window.title("Nuke the system")
 window.config(bg="#E8D2CF")
 

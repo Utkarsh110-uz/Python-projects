@@ -1,9 +1,9 @@
-print("|----You are playing KBC----|")
-ques_list = ["Q.1What is the capital of India?", "Q.2In which state Jaipur is?", "Q.3How many colors are there in Rainbow?"]
+print("|----You are playing KBC----|\n")
+ques_list = ["Q.1What is the capital of India?\n", "Q.2In which state Jaipur is?\n", "Q.3How many colors are there in Rainbow?\n"]
 i = 0
 while(i<len(ques_list)):
     print(ques_list[i])
-    a = input("Enter number: ")
+    a = input("Enter number: ").capitalize()
     with open(f"answers.txt", "a") as f:
         f.write(f"{a}\n")
         print("")
