@@ -50,22 +50,22 @@ number2 = Entry(width=10)
 number2.pack(pady=2)
 
 # Initializing buttons
-add_button = Button(window, text="+", command=add)
+add_button = Button(window, text="+", command=add, width=5)
 add_button.pack(pady=2)
 
-sub_button = Button(window, text="-", command=sub)
+sub_button = Button(window, text="-", command=sub, width=5)
 sub_button.pack(pady=2)
 
-mul_button = Button(window, text="*", command=mul)
+mul_button = Button(window, text="*", command=mul, width=5)
 mul_button.pack(pady=2)
 
-div_button = Button(window, text="/", command=div)
+div_button = Button(window, text="/", command=div, width=5)
 div_button.pack(pady=2)
 
-delete_button = Button(window, text="Delete", command=delete_all)
+delete_button = Button(window, text="Delete", command=delete_all, width=5)
 delete_button.pack(pady=2)
 
-exit_button = Button(window, text="Quit", command=window.destroy)
+exit_button = Button(window, text="Quit", command=window.destroy, width=5)
 exit_button.pack()
 
 window.mainloop()

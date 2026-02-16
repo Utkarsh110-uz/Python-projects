@@ -4,13 +4,13 @@
 def harmonic_mean():
     
     print("---Harmonic Mean---")
-    reciprocals_list = [] # An empty list where values will be added form reciprocal
+    reciprocals_list = [] # An empty list where values will be added from reciprocal
     i = 0
     total_numbers = int(input("Enter total numbers: ")) # Here user will enter the total numbers
     while(i<total_numbers):
         numbers = float(input("Enter number for harmonic mean: ")) # Here user will enter number for HM
         if(numbers == 0): # Here if someone enters 0 then that iteration  will be skipped
-            input("You are entering 0 which is not valid please enter a valid number")
+            numbers = input("You are entering 0 which is not valid please enter a valid number: ")
             continue
         reciprocal = 1/numbers # Here numbers will be divided by one
         reciprocals_list.append(reciprocal) # the divided values will be added to reciprocals_list

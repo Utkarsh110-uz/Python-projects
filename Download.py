@@ -9,9 +9,7 @@ window.config(bg="lightblue")
 
 def download_content():
     content = user_input.get()
-    system(content)
-    with open("backup.txt", "a") as f:
-        f.write(content)
+    system(f"# yt-dlp -x --audio-format mp3 --audio-quality 0 {content}")
 
 def clear_content():
     user_input.delete(0, END)
