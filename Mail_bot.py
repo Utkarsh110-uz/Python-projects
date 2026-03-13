@@ -22,11 +22,11 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 #  ✏️  FILL IN YOUR CREDENTIALS BELOW
 # ─────────────────────────────────────────────
 
-TELEGRAM_BOT_TOKEN = "8776097030:AAHUHP-MfVao0tZFDQ3bAX5Bmo5k93vKulo" # From @BotFather
-TELEGRAM_CHAT_ID   = "6560105384" # Your numeric chat ID
+TELEGRAM_BOT_TOKEN = "Bot_token" # From @BotFather
+TELEGRAM_CHAT_ID   = "Chat_ID" # Your numeric chat ID
 
-GMAIL_ADDRESS      = "utkarsh66488@gmail.com" # Your Gmail address
-GMAIL_APP_PASSWORD = "zlaw ytop pxoo ccbj" # 16-char App Password
+GMAIL_ADDRESS      = "Your_email" # Your Gmail address
+GMAIL_APP_PASSWORD = "Gmail_app_password" # 16-char App Password
 
 # ─────────────────────────────────────────────
 #  ⚙️  SETTINGS
