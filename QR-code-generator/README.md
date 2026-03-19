@@ -1,2 +1,0 @@
-# QR-code-generator
-
